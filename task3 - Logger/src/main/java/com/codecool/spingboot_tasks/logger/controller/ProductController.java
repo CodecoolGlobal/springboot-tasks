@@ -14,6 +14,8 @@ import java.util.List;
 @RestController
 public class ProductController {
 
+    private final Logger log = LoggerFactory.getLogger(ProductController.class); // @Slf4j
+
     private final ProductService productService;
 
     public ProductController(ProductService productService) {
@@ -22,6 +24,12 @@ public class ProductController {
 
     @GetMapping("/products")
     public List<Product> getProducts(){
+        System.out.println("Hello from logger");
+        log.trace("A TRACE Message");
+        log.debug("A DEBUG Message");
+        log.info("An INFO Message");
+        log.warn("A WARN Message");
+        log.error("An ERROR Message");
         return null;
     }
 
